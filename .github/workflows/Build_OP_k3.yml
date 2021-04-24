@@ -3,7 +3,11 @@ name: Build_k3
 on: 
   repository_dispatch:
   workflow_dispatch:
-
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: true
+        default: 'true'
 # 定时触发编译
   schedule:
     - cron: 0 2 * * *
